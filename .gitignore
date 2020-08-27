@@ -24,7 +24,3 @@ yarn-debug.log*
 yarn-error.log*
 
 .vscode
-
-src/ecsScene/scene.js
-/public/editor.js
-/src/ecsScene/ecs.js.raw

@@ -77,6 +77,16 @@ class Preview extends React.Component<Props & CollectedProps, State> {
       if (!unityDebugParams) {
         canvas = await editorWindow.editor.getDCLCanvas()
         canvas && canvas.classList.add('dcl-canvas')
+
+        const width = this.canvasContainer.current.offsetWidth
+        const height = this.canvasContainer.current.offsetHeight
+
+        // ESTO DE ACA NO HACE NADA, NUNCA CAMBIA EL TAMAÑO DEL CANVAS
+        canvas.width = width
+        canvas.height = height
+
+        // ESTO DE ACA DEBERIA CAMBIAR EL TAMAÑO PERO ENTRA EN UN LOOP INFINITO DE RESIZING HASTA Q EXPLOTA :(
+        //editorWindow.editor.setBuilderCanvasSize(width, height)
       }
 
       this.moveCanvas()
